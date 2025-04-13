@@ -4,8 +4,7 @@ let api = "https://mnfy.onrender.com/";
 function isValidUrl(url) {
   try {
     const parsed = new URL(url);
-    const hostname = parsed.hostname;
-    return /^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/.test(hostname);
+    if (!parsed.includes(".")) return;
   } catch {
     return false;
   }
