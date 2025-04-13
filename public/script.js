@@ -3,8 +3,9 @@ let api = "https://mnfy.onrender.com/";
 
 function isValidUrl(url) {
   try {
-    const parsed = new URL(url);
-    if (!parsed.includes(".")) return;
+    if (url.startsWith("http") && url.includes(".")) {
+      return true;
+    }
   } catch {
     return false;
   }
